@@ -7,8 +7,6 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 public class User extends UserSimple{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String PersonID;
     private UUID uuid;
 
