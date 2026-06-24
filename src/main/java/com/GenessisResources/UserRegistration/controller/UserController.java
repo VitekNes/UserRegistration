@@ -1,6 +1,7 @@
 package com.GenessisResources.UserRegistration.controller;
 
 import com.GenessisResources.UserRegistration.model.User;
+import com.GenessisResources.UserRegistration.model.UserSimple;
 import com.GenessisResources.UserRegistration.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,12 +20,15 @@ public class UserController {
 
     @GetMapping
     public List getAllUsers(@RequestParam(required = false) Boolean detail){
-        if(detail == null) {
+        if(detail == null || !detail) {
             return userService.getAllUsersSimple();
-        }else if(detail == true){
-            return userService.getAllUsers();
         }else {
-            return userService.getAllUsersSimple();
+            return userService.getAllUsers();
         }
     }
+
+/*    @GetMapping("/{id}")
+    public UserSimple getUser(@RequestParam(required = false) Boolean detail){
+
+    }*/
 }

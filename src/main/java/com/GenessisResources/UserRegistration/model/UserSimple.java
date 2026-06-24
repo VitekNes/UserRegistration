@@ -5,6 +5,9 @@ public class UserSimple {
     private String name;
     private String surname;
 
+    public UserSimple() {
+    }
+
     public UserSimple(int id, String name, String surname) {
         this.id = id;
         this.name = name;
